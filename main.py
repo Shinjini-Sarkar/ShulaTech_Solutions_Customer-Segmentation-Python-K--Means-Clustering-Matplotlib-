@@ -65,6 +65,7 @@ sns.scatterplot(x=X_pca[:,0],y=X_pca[:,1],hue=clusters,palette="Set1",s=100)
 plt.title("Customer Segments(PCA+KMeans)")
 plt.xlabel('PCA Component 1')
 plt.ylabel("PCA Component 2")
+plt.savefig("images/2d_customer_segments.png")#save the output in the images folder
 plt.show()
 
 #drawing a 3D plot
@@ -86,6 +87,8 @@ plot_3d.set_xlabel("Component 1")
 plot_3d.set_ylabel("Component 2")
 plot_3d.set_zlabel("Component 3")
 #display the 3d plot
+
+plt.savefig("images/3d_customer_segments.png")#save the image of the 3d plot in images folder
 plt.show()
 
 
