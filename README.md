@@ -15,7 +15,7 @@ This project performs **Customer Segmentation** using **Unsupervised Machine Lea
 
 ## 📂 Dataset
 
-**Dataset used:** [Mall Customer Segmentation Data](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial)
+**Dataset used:** [Mall Customer Segmentation Data](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)
 
 **Features:**
 - CustomerID
