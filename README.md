@@ -1,0 +1,1 @@
+a project on k means clustering for customer segmentation
