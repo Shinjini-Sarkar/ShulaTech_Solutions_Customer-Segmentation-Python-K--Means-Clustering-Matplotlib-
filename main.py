@@ -6,6 +6,8 @@ import seaborn as sns
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
+from mpl_toolkits.mplot3d import Axes3D
+
 
 #load the dataset
 data=pd.read_csv("Mall_Customers.csv")
@@ -38,7 +40,7 @@ plt.ylabel("wcss-Within Cluster Sum of Squares")
 plt.show()
 
 #after checking the graph the elbow point is observed to be 5
-kmeans=KMeans(n_clusters=5,random_state=42)
+kmeans=KMeans(n_clusters=6,random_state=42)
 
 #fit -- Find the clusters (centroids) from the data
 #predict -- Assign each data point to the nearest cluster
@@ -63,6 +65,27 @@ sns.scatterplot(x=X_pca[:,0],y=X_pca[:,1],hue=clusters,palette="Set1",s=100)
 plt.title("Customer Segments(PCA+KMeans)")
 plt.xlabel('PCA Component 1')
 plt.ylabel("PCA Component 2")
+plt.show()
+
+#drawing a 3D plot
+#add_subplot(111):1 row, 1 column, 1 plot
+pca_3d=PCA(n_components=3)
+X_3d=pca_3d.fit_transform(X_scaled)
+fig=plt.figure(figsize=(10,10))
+plot_3d=fig.add_subplot(111,projection='3d')
+
+#X_3d[:, 0] → x-axis (1st principal component)
+#X_3d[:, 1] → y-axis (2nd component)
+#X_3d[:, 2] → z-axis (3rd component)
+#c=clusters → color dots by their cluster label
+#cmap='Set1' → use a bright, clean color palette
+#s=100 → dot size (100 = medium-large)
+plot_3d.scatter(X_3d[:,0],X_3d[:,1],X_3d[:,2],c=clusters,cmap="Set1",s=100)
+plot_3d.set_title("3D Visualization of Customer Segmentation")
+plot_3d.set_xlabel("Component 1")
+plot_3d.set_ylabel("Component 2")
+plot_3d.set_zlabel("Component 3")
+#display the 3d plot
 plt.show()
 
 
