@@ -92,3 +92,4 @@ plt.savefig("images/3d_customer_segments.png")#save the image of the 3d plot in 
 plt.show()
 
 
+
